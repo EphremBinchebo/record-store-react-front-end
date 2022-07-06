@@ -22,11 +22,7 @@ function Records() {
         setScopedRecord({id:0, artist: "", album: "", year: now.getFullYear()});
         setShowForm(true);
     }
-    function handleDelete() {
-        fetch(`http://localhost:8080/records/${record.id}`, { method: "DELETE"})
-            .then(() => notify({ action: "delete", record: record}))
-            .catch(error => notify({ action: "delete", error: error}));
-    }
+
     function addClick() {
         const now = new Date();
         setScopedRecord({id:0, artist: "", album: "", year: now.getFullYear()});
